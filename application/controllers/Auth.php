@@ -236,7 +236,7 @@ class Auth extends CI_Controller
 	            </center>
 	          </div>');
 					echo "register";
-					redirect(base_url('login'));
+					redirect('login');
 				}else{
 					$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
 	            <center>Gagal mengirim email!<br>
