@@ -99,9 +99,12 @@ $produk = $row['nama_produk'];
 
             </div>
             <form id="product-form" class="product__options">
-                <?= print_r($row) ?>
+                <?php
+                    $e_url = encrypt_url($row['id_produk']);
+                    echo $e_url;
+                ?>
                 <div class="form-group product__option">
-                    <input type="hidden" name="id_produk" value="<?= encrypt_url($row['id_produk']) ?>">
+                    <input type="hidden" name="id_produk" value="<?= $e_url ?>">
                     <label class="product__option-label" for="product-quantity">Jumlah</label>
                     <div class="product__actions">
                         <div class="product__actions-item">
