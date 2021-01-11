@@ -289,7 +289,8 @@ if (!empty($temp_sales)) {
     $number_cart = $temp_sales['jumlah'];
 } else {
     $number_cart = 0;
-} ?>
+}
+?>
 
 <input type="hidden" id="number-cart" value="<?= $number_cart; ?>">
-<script src="<?= base_url('assets/template/js/product.js?<?php echo date("YmdHis"); ?>') ?>"></script>
+<script src="<?= base_url('assets/template/js/product.js?'.date("YmdHis")) ?>"></script>
