@@ -235,6 +235,7 @@ class Auth extends CI_Controller
             </center>
           </div>');
 				redirect('login');
+				echo "string";
 			}
 		}
 	}
