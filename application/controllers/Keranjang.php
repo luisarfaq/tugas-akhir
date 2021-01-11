@@ -19,6 +19,7 @@ class Keranjang extends CI_Controller
 
     function index()
     {
+        echo $this->session->idp;
         $id_produk   = filter(decrypt_url($this->input->post('id_produk')));
         $jumlah   = filter($this->input->post('jumlah'));;
         //$stok = $b['beli'] - $j['jual'];
