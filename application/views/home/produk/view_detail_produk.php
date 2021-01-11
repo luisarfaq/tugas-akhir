@@ -100,7 +100,7 @@ $produk = $row['nama_produk'];
             </div>
             <form id="product-form" class="product__options">
                 <?php
-                    $e_url = encrypt_url($row['id_produk']);
+                    $e_url = encrypt_url(21);//$row['id_produk']
                     echo $e_url;
                 ?>
                 <div class="form-group product__option">
