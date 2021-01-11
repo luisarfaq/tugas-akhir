@@ -33,10 +33,10 @@ function kirim_email($email, $subject, $message)
     $ci->email->subject("$subject");
     $ci->email->message("$message");
     if ($ci->email->send()) {
-        echo 'Your Email has successfully been sent.';
+        // echo 'Your Email has successfully been sent.';
         return true;
     } else {
         echo($ci->email->print_debugger());
-        die;
+        // die;
     }
 }
