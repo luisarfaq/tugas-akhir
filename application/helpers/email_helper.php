@@ -28,7 +28,7 @@ function kirim_email($email, $subject, $message)
     $config['mailtype'] = "html";
     $config['newline'] = "\r\n";
     $ci->email->initialize($config);
-    $ci->email->from('boyastro768@gmail.com', "Topgear Coffee & Roastery");
+    $ci->email->from($smtp_user, "Topgear Coffee & Roastery");
     $ci->email->to("$email");
     $ci->email->subject("$subject");
     $ci->email->message("$message");
