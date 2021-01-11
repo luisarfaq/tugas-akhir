@@ -101,7 +101,7 @@ $produk = $row['nama_produk'];
             <form id="product-form" class="product__options">
                 <?php
                     $e_url = $row['id_produk'];
-                    echo $e_url;
+                    // echo $e_url;
                 ?>
                 <div class="form-group product__option">
                     <input type="hidden" name="id_produk" value="<?= $e_url ?>">
@@ -292,4 +292,4 @@ if (!empty($temp_sales)) {
 } ?>
 
 <input type="hidden" id="number-cart" value="<?= $number_cart; ?>">
-<script src="<?= base_url('assets/template/js/product.js?<?= date("YmdHis") ?>') ?>"></script>
+<script src="<?= base_url('assets/template/js/product.js?<?php echo date("YmdHis"); ?>') ?>"></script>
