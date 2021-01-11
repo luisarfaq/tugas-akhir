@@ -234,7 +234,7 @@ class Auth extends CI_Controller
             Silahkan cek email anda untuk aktivasi pendaftaran.
             </center>
           </div>');
-				redirect('login');
+				redirect(base_url('login'));
 				echo "register";
 			}
 		}
