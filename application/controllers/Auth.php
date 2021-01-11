@@ -228,7 +228,7 @@ class Auth extends CI_Controller
 					";
 
 				kirim_email($email, $subject, $message);
-				$this->model_app->insert('tb_pengguna', $data);
+				// $this->model_app->insert('tb_pengguna', $data);
 				$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
             <center>Berhasil mendaftar!<br>
             Silahkan cek email anda untuk aktivasi pendaftaran.
