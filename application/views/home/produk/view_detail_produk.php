@@ -99,7 +99,7 @@ $produk = $row['nama_produk'];
 
             </div>
             <form id="product-form" class="product__options">
-
+                <?= print_r($row) ?>
                 <div class="form-group product__option">
                     <input type="hidden" name="id_produk" value="<?= encrypt_url($row['id_produk']) ?>">
                     <label class="product__option-label" for="product-quantity">Jumlah</label>
