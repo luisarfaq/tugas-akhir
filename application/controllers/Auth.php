@@ -235,14 +235,15 @@ class Auth extends CI_Controller
 	            Silahkan cek email anda untuk aktivasi pendaftaran.
 	            </center>
 	          </div>');
-					echo "register";
 					redirect('login');
+					echo "login";
 				}else{
 					$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
 	            <center>Gagal mengirim email!<br>
 	            </center>
 	          </div>');
 					redirect(base_url('register'));
+					echo "login";
 
 				}
 			}
