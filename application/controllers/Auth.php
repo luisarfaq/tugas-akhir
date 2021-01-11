@@ -229,9 +229,9 @@ class Auth extends CI_Controller
 
 				$cek = kirim_email($email, $subject, $message);
 				if ($cek) {
+					redirect('login');
 					// $this->model_app->insert('tb_pengguna', $data);
 					// $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"><center>Silahkan cek email anda untuk aktivasi pendaftaran.</center></div>');
-					redirect('login');
 					echo "login";
 				}else{
 					$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"><center>Gagal mengirim email!<br></center></div>');
