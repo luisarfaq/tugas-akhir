@@ -25,7 +25,7 @@ function add2cart() {
             data: data,
             url: site_url + "keranjang",
             success: function (r) {
-                // window.location = (site_url + "keranjang")
+                window.location = (site_url + "keranjang")
             }
         });
     }
