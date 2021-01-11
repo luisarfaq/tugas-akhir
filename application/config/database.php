@@ -73,12 +73,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
+$is_hosting = $_SERVER['SERVER_NAME'] === 'localhost'?false:true;
+
+
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'tugas_akhir',
+	'username' => $is_hosting? 'topgearc_admin' : 'root',
+	'password' => $is_hosting? 'topgear-123' : '',
+	'database' => $is_hosting? 'topgearc_tugas_akhir' : 'tugas_akhir',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
