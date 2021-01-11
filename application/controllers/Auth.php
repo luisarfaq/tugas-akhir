@@ -227,15 +227,24 @@ class Auth extends CI_Controller
 						<a href='" . base_url() . "c?q=" . $code . "'>Aktivasi Akun</a>
 					";
 
-				kirim_email($email, $subject, $message);
-				// $this->model_app->insert('tb_pengguna', $data);
-				$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-            <center>Berhasil mendaftar!<br>
-            Silahkan cek email anda untuk aktivasi pendaftaran.
-            </center>
-          </div>');
-				redirect(base_url('login'));
-				echo "register";
+				$cek = kirim_email($email, $subject, $message);
+				if ($cek) {
+					// $this->model_app->insert('tb_pengguna', $data);
+					$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+	            <center>Berhasil mendaftar!<br>
+	            Silahkan cek email anda untuk aktivasi pendaftaran.
+	            </center>
+	          </div>');
+					echo "register";
+					redirect(base_url('login'));
+				}else{
+					$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+	            <center>Gagal mengirim email!<br>
+	            </center>
+	          </div>');
+					redirect(base_url('register'));
+
+				}
 			}
 		}
 	}
