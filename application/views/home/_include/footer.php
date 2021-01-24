@@ -90,7 +90,7 @@
             </div>
 
             <div class="site-footer__bottom">
-                <div class="site-footer__copyright">&copy; <?= date('Y') ?> <a href="https://TopgearCoffee&Roastery.com/" target="_BLANK">Topgear Coffee & Roastery</a></div>
+                <div class="site-footer__copyright">&copy; <?= date('Y') ?> <a href="http://topgear-coffee.my.id/" target="_BLANK">Topgear Coffee & Roastery</a></div>
                <!--  <div class="site-footer__payments"><img src="<?= base_url('assets/template/tema/') ?>images/payments.png" alt=""></div>
             </div> -->
         </div>
