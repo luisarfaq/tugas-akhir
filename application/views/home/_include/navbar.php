@@ -203,7 +203,7 @@
                                             <div class="search search--location--indicator">
                                                 <div class="search__body">
                                                     <form class="search__form" action="<?= base_url('cari') ?>" method="POST">
-                                                        <input class="search__input" name="cari" placeholder="Sayang ingin mencari.." aria-label="Site search" type="text" autocomplete="off">
+                                                        <input class="search__input" name="cari" placeholder="Saya ingin mencari.." aria-label="Site search" type="text" autocomplete="off">
                                                         <button class="search__button search__button--type--submit" type="submit">
                                                             <svg width="20px" height="20px">
                                                                 <use xlink:href="<?= base_url('assets/template/tema/') ?>images/sprite.svg#search-20"></use>
