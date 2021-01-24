@@ -7,7 +7,7 @@
           <div class="card">
             <div class="card-header">
               <h3 class="card-title">Pesanan Masuk</h3>
-              <a class='float-right btn btn-primary btn-sm' href='<?= base_url('admin/print_pesanan'); ?>' target="_blank">Print Pesanan</a>
+              <a class='float-right btn btn-primary btn-sm' href='<?= base_url('admin/print_pesanan?tgl_awal='.$this->input->get('tgl_awal',true).'&tgl_akhir'.$this->input->get('tgl_akhir',true)); ?>' target="_blank">Print Pesanan</a>
             </div>
 
             <div class="card-body">

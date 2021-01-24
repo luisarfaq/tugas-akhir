@@ -342,10 +342,11 @@ class Keranjang extends CI_Controller
         $jumlah_biaya = 0;
         $barang = [];
         foreach ($data as $key => $value) {
-            $jumlah_biaya += $value->harga_jual;
+            $diskon = $this->db->where('id_produk',$value->id_produk)->get('tb_toko_produk')->row()->diskon;
+            $jumlah_biaya += ($value->harga_jual-$diskon)*$value->jumlah;
             $barang[] =  [
               'id' => 'a1',
-              'price' => $value->harga_jual,
+              'price' => $value->harga_jual-$diskon,
               'quantity' => $value->jumlah,
               'name' => $value->nama_produk,
           ];
@@ -361,23 +362,6 @@ class Keranjang extends CI_Controller
           'order_id' => $data_produk->kode_transaksi,
           'gross_amount' => $jumlah_biaya+$data_produk->ongkir //94000, // no decimal allowed for creditcard
         );
-
-        // Optional
-        $item1_details = array(
-          'id' => 'a1',
-          'price' => 18000,
-          'quantity' => 3,
-          'name' => "Apple"
-        );
-
-        // Optional
-        $item2_details = array(
-          'id' => 'a2',
-          'price' => 20000,
-          'quantity' => 2,
-          'name' => "Orange"
-        );
-
         // Optional
         $item_details =$barang;// array ($item1_details, $item2_details);
 
