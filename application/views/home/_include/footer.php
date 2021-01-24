@@ -56,7 +56,7 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-md-12 col-lg-3">
+                    <!-- <div class="col-12 col-md-12 col-lg-3">
                         <div class="site-footer__widget footer-newsletter">
                             <h5 class="footer-newsletter__title">Newsletter</h5>
                             <div class="footer-newsletter__text">Berlangganan sekarang, dan dapatkan informasi terbaru dari kami.</div>
@@ -77,7 +77,7 @@
                                     <a href="<?= $iden['instagram'] ?>" target="_blank"><i class="fab fa-instagram"></i></a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
 
                    <div class="col-12 col-md-12 col-lg-3">
                         <div class="site-footer__widget footer-links text-left pl-5">
