@@ -71,6 +71,7 @@ $route = array(
     'sitemap.xml'           => 'sitemap',
     'subscribe'             => 'subscribe',
     'keranjang'             => 'keranjang',
+    // 'contoh'                => 'contoh',
 );
 $route['default_controller'] = 'main';
 $route['(:any)'] = 'ref/$1/$2';
