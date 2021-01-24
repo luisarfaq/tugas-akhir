@@ -103,7 +103,7 @@
     <?php echo $konten; ?>
 
     <footer class="main-footer">
-      <strong>&copy; <?= date('Y') ?> <a href="https://TopgearCoffee&Roastery.com" target="_BLANK">Topgear Coffee & Roastery</a></strong>
+      <strong>&copy; <?= date('Y') ?> <a href="http://topgear-coffee.my.id/" target="_BLANK">Topgear Coffee & Roastery</a></strong>
       <div class="float-right d-none d-sm-inline-block">
 
       </div>
