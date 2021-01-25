@@ -33,8 +33,7 @@
                               <td>" . tgl_indo($row['tgl_daftar']) . "</td>
                               <td>
                                 <a class='btn btn-info btn-xs' title='Detail' href='" . base_url() . "admin/detail_konsumen/$row[id_pengguna]'><i class='fas fa-search fa-fw'></i> Detail</a>
-                                <a class='btn btn-success btn-xs' title='Ubah' href='" . base_url() . "admin/edit_konsumen/$row[id_pengguna]'><i class='fas fa-edit fa-fw'></i></a>
-                                <button class='btn btn-danger btn-xs' title='Hapus' data-id='$row[id_pengguna]' onclick=\"confirmation(event)\"><i class='fas fa-times fa-fw'></i></button>
+                                
                               </td>
                           </tr>";
                     $no++;
