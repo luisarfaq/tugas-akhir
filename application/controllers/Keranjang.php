@@ -145,6 +145,7 @@ class Keranjang extends CI_Controller
                 $idp = $this->db->insert_id();
 
                 $keranjang = $this->model_app->view_where('tb_toko_penjualantemp', array('session' => $this->session->idp));
+                $iden = $this->model_app->view_where('tb_web_identitas', array('id_identitas' => '1'))->row_array();
                 foreach ($keranjang->result_array() as $row) {
                     $dataa = array(
                         'id_penjualan' => $idp,
@@ -162,6 +163,13 @@ class Keranjang extends CI_Controller
                     $datastok = array(
                         'stok'    => $stoq - $row['jumlah']
                     );
+                    if ($stoq - $row['jumlah'] < 5) {
+                        $dt_produk = $this->db->where('id_produk',$row['id_produk'])->get('tb_toko_produk')->row();
+                        $emailadmin = $iden['email'];
+                        $subadmin = 'Pemberitahuan Stok';
+                        $pesanadmin = 'Hai Admin, stok '.$dt_produk->nama_produk.' mau habis.. buruan cek sekarang';
+                        kirim_email($emailadmin, $subadmin, $pesanadmin);
+                    }
 
                     $this->db->where('id_produk', "$row[id_produk]");
                     $this->db->update('tb_toko_produk', $datastok);
@@ -179,7 +187,6 @@ class Keranjang extends CI_Controller
                 $data['orders'] = $this->session->idp;
                 $data['total_bayar'] = rupiah(+$this->input->post('total') + $this->input->post('ongkir'));
 
-                $iden = $this->model_app->view_where('tb_web_identitas', array('id_identitas' => '1'))->row_array();
                 $data['rekening'] = $this->model_app->view('tb_toko_rekening');
 
 
@@ -234,6 +241,7 @@ class Keranjang extends CI_Controller
 
                 $no = 1;
                 $belanjaan = $this->model_app->view_join_where('tb_toko_penjualandetail', 'tb_toko_produk', 'id_produk', array('id_penjualan' => $idp), 'id_penjualan_detail', 'ASC');
+                $iden = $this->model_app->view_ordering_limit('tb_web_identitas', 'id_identitas', 'DESC', 0, 1)->row_array();
                 foreach ($belanjaan as $row) {
                     $sub_total = (($row['harga_jual'] - $row['diskon']) * $row['jumlah']);
                     if ($row['diskon'] != '0') {
@@ -288,7 +296,6 @@ class Keranjang extends CI_Controller
                 kirim_email($email_tujuan, $subject, $message);
                 $data['breadcrumb'] = 'Transaksi Berhasil';
 
-                $iden = $this->model_app->view_ordering_limit('tb_web_identitas', 'id_identitas', 'DESC', 0, 1)->row_array();
                 $emailadmin = $iden['email'];
                 $subadmin = 'Pesanan Baru';
                 $pesanadmin = 'Hai Admin, ada pesanan baru.. buruan cek sekarang';
