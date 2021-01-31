@@ -198,7 +198,7 @@
 
 
                             doc.content.push(
-                                {text:"Total : Rp. <?= rupiah($total_harga) ?>",margin:[360,20,20,20]}
+                                {text:"Total : Rp. <?= rupiah($total_harga) ?>",margin:[380,20,20,20]}
                             );
                             doc.content.push(
                                 {text:"Yogyakarta, <?= date('j F Y') ?>",margin:[350,20,20,20]}
