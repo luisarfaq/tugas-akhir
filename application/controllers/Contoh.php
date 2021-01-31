@@ -20,7 +20,7 @@
 // 	}
 // 	function index()
 // 	{
-// 		$data=array('user'=>$this->db->query('select * from tb_pengguna')->result());
+// 		$data=array('user'=>$this->db->query('select * from tb_pengguna join tb_alamat on tb_pengguna.id_alamat = tb_alamat.id_alamat')->result());
 // 		$this->load->view('home/contoh_view',$data);
 // 	}
 }
