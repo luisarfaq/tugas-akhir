@@ -201,6 +201,9 @@
                                 {text:"Total : Rp. <?= rupiah($total_harga) ?>",margin:[400,20,20,20]}
                             );
                             doc.content.push(
+                                {text:"NB : Total harga sudah dengan biaya ongkir",margin:[20,20,20,20]}
+                            );
+                            doc.content.push(
                                 {text:"Yogyakarta, <?= date('j F Y') ?>",margin:[350,20,20,20]}
                             );
                             doc.content.push(
