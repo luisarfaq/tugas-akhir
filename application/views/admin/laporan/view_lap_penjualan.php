@@ -79,9 +79,9 @@
             <th style="width: 5%">No</th>
                                         <th>Waktu Transaksi</th>
                                         <th>Kode Transaksi</th>
-                                        <th>Total Belanja</th>
                                         <th>Pengiriman</th>
                                         <th>Kota Tujuan</th>
+                                        <th>Total Belanja</th>
         </tr>
         </thead>
                                 <!-- <tbody>
@@ -112,6 +112,7 @@
                                 <tbody>
                                 <?php
                                     $no = 1;
+                                    $total = 0;
                                     foreach ($record->result_array() as $row) {
 
                                         $total = $this->db->query("SELECT a.kode_transaksi, a.kurir, a.resi, a.service, a.proses, a.ongkir, sum((b.harga_jual*b.jumlah)-(c.diskon*b.jumlah)) as total, sum(c.berat*b.jumlah) as total_berat FROM `tb_toko_penjualan` a JOIN tb_toko_penjualandetail b ON a.id_penjualan=b.id_penjualan JOIN tb_toko_produk c ON b.id_produk=c.id_produk JOIN tb_pengguna d ON a.id_pembeli=d.id_pengguna where a.kode_transaksi='$row[kode_transaksi]'")->row_array();
@@ -125,9 +126,9 @@
                                             <td><?= $no ?> </td>
                                             <td><?= $row['waktu_transaksi'] ?></td>
                                             <td><?= $row['kode_transaksi']; ?></td>
-                                            <td style='color:red;'>Rp <?= rupiah($total['total'] + $total['ongkir']) ?></td>
                                             <td><span style='text-transform:uppercase'> <?= $total['kurir'] ?></span> <?= ($total['service']) ?></td>
                                             <td><?= $kota['nama_kota'] ?></td>
+                                            <td style='color:red;'>Rp <?= $total += rupiah($total['total'] + $total['ongkir']) ?></td>
                                         </tr>
                                     <?php
                                         $no++;
